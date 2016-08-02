@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" style="background:rgb(6, 19, 37)">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="../../favicon.ico">
+		<title>EagleEye: Alcatel-Lucent LTE Real-Time Monitoring System by Mode Innovation</title>
+		
+			<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+			<!-- Import Button -->
+		<link href="css/button.css" rel="stylesheet" >
+			<!-- Import font -->
+		<link href="css/font-awesome.min.css" rel="stylesheet"  >
+			<!-- Custom styles for this template -->
+		<link href="css/navbar-fixed-top.css" rel="stylesheet">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body  onload="init_monitoring_page();" style="background:rgb(247, 247, 247)">
+	   <!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand visible-lg" href="#">EagleEye Monitoring</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse" role="navigation">
+			  <ul id="itemDropDown" class="nav navbar-nav">	
+			  </ul>
+			  <ul class="nav navbar-nav navbar-right visible-lg">
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" title="Select lines' number of each chart" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lines' number<span class="caret"></span></a>
+				  <ul class="dropdown-menu navbar-default">
+					<li id="changeLineNum_1"><a href="javascript:void(0);" onclick="linesChanged(1)">1  line each chart</a></li>
+					<li id="changeLineNum_2"><a href="javascript:void(0);" onclick="linesChanged(2)">2  lines each chart</a></li>
+					<li id="changeLineNum_3"><a href="javascript:void(0);" onclick="linesChanged(3)">3  lines each chart</a></li>
+					<li id="changeLineNum_4"><a href="javascript:void(0);" onclick="linesChanged(4)">4  lines each chart</a></li>
+					<li id="changeLineNum_5" class="active"><a href="javascript:void(0);" onclick="linesChanged(5)">5 lines each chart</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="javascript:void(0);">or input here:</a></li>
+					<li >
+						<a href="javascript:void(0);"><input style="width:80px" id="inputLines" onkeydown="linesEnterSumbit()"></input>
+						<button align="center" style="width:40px" onclick="linesEnterButton()">OK</button></a>
+					</li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Select charts' number of each line">Charts' number<span class="caret"></span></a>
+				  <ul class="dropdown-menu navbar-default">
+					<li id="changeChartNum_1"><a href="javascript:void(0);" onclick="chartsChanged(1);">1 chart each line</a></li>
+					<li id="changeChartNum_2" class="active"><a href="javascript:void(0);" onclick="chartsChanged(2);">2 charts each line</a></li>
+				  </ul>
+				</li>
+			  </ul>
+			</div><!--/.nav-collapse -->
+		  </div>
+		</nav>
+	
+		<div id="main" class="well">
+		</div>
+		
+		<footer id="footer" style="margin-top:10px" >
+		  <div class="container" align="center">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+			   <b>TE Mode Innovation</b><br />
+				Wireless BL Technical Engineering<br />
+				Alcatel-Lucent Shanghai Bell, Proprietary<br />
+				<small><em>Dec. 6, 2015</em></small>
+			<div>
+		  </div>
+		</footer>
+
+			<!-- Import jquery.mim.hs -->
+		<script src="js/jquery.min.js"></script>
+			<!-- Import EChart -->
+		<script src="echarts-2.2.7/build/dist/echarts.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+			<!-- Import Button.css -->
+		<script type="text/javascript" src="js/buttons.js"></script>
+			<!-- Import Own JS file -->
+		<script src="configuration.js"></script>
+		<script src="enb_monitor.js"></script>
+		<!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+	</body>
+</html>
